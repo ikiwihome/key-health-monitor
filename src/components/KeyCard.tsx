@@ -68,7 +68,7 @@ export function KeyCard({ keyData }: KeyCardProps) {
               <h3 className="font-semibold text-slate-800 text-sm truncate">
                 {getShortLabel(keyName)}
               </h3>
-              <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider mt-0.5">
+              <p className="text-[10px] font-medium text-slate-400 tracking-wider mt-0.5">
                 {keyData.label || 'Default Key'}
               </p>
             </div>
