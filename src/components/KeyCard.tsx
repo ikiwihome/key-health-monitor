@@ -65,10 +65,10 @@ export function KeyCard({ keyData }: KeyCardProps) {
               <Key className="w-4.5 h-4.5 text-white" />
             </div>
             <div className="min-w-0 flex-1">
-              <h3 className="font-semibold text-slate-800 text-sm truncate">
+              <h3 className="font-semibold text-slate-800 text-md truncate">
                 {getShortLabel(keyName)}
               </h3>
-              <p className="text-[10px] font-medium text-slate-400 tracking-wider mt-0.5">
+              <p className="text-[12px] font-medium text-slate-600 tracking-wider mt-0.5">
                 {keyData.label || 'Default Key'}
               </p>
             </div>
@@ -115,9 +115,9 @@ export function KeyCard({ keyData }: KeyCardProps) {
                 'whitespace-nowrap z-20 font-medium'
               )}>
                 <div className="flex items-center gap-2">
-                  <span>Used: {formatCurrency(currentUsage)}</span>
+                  <span>已使用: {formatCurrency(currentUsage)}</span>
                   <span className="text-slate-400">/</span>
-                  <span>Limit: {keyData.limit ? formatCurrency(keyData.limit) : 'Unlimited'}</span>
+                  <span>限额: {keyData.limit ? formatCurrency(keyData.limit) : 'Unlimited'}</span>
                 </div>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-slate-900 rotate-45" />
               </div>
@@ -127,7 +127,7 @@ export function KeyCard({ keyData }: KeyCardProps) {
           {/* 进度条下方的使用量和限额 */}
           <div className="flex justify-between items-center mt-3 px-1">
             <div className="flex flex-col">
-              <span className="text-[10px] text-slate-400 font-medium uppercase tracking-tight">Used</span>
+              <span className="text-[10px] text-slate-400 font-medium uppercase tracking-tight">已使用</span>
               <span className={cn(
                 'text-xs font-bold',
                 isOverLimit ? 'text-red-600' : 'text-slate-700'
@@ -136,7 +136,7 @@ export function KeyCard({ keyData }: KeyCardProps) {
               </span>
             </div>
             <div className="flex flex-col items-end">
-              <span className="text-[10px] text-slate-400 font-medium uppercase tracking-tight">Limit</span>
+              <span className="text-[10px] text-slate-400 font-medium uppercase tracking-tight">限额</span>
               <span className="text-xs font-bold text-slate-700">
                 {keyData.limit ? formatCurrency(keyData.limit) : '∞'}
               </span>
@@ -152,7 +152,7 @@ export function KeyCard({ keyData }: KeyCardProps) {
             <Activity className="w-3.5 h-3.5 text-blue-500" />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="text-[10px] text-slate-400 font-medium uppercase">Rate</span>
+            <span className="text-[10px] text-slate-400 font-medium uppercase">请求次数限制</span>
             <span className="text-[11px] font-bold text-slate-700 truncate">
               {formatRateLimit(keyData.rate_limit)}
             </span>
@@ -165,7 +165,7 @@ export function KeyCard({ keyData }: KeyCardProps) {
             <Clock className="w-3.5 h-3.5 text-indigo-500" />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="text-[10px] text-slate-400 font-medium uppercase">Expiry</span>
+            <span className="text-[10px] text-slate-400 font-medium uppercase">失效时间</span>
             <span className={cn(
               'text-[11px] font-bold truncate',
               keyData.expires_at ? 'text-slate-700' : 'text-emerald-600'
