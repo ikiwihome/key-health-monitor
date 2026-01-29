@@ -72,8 +72,8 @@ export default function Home() {
               <Shield className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-slate-800">Open Router API Key 监控板</h1>
-              <p className="text-slate-400 text-sm mt-0.5 font-medium uppercase tracking-wide">API Usage & Limits Dashboard</p>
+              <h1 className="text-2xl font-bold tracking-tight text-slate-800">OpenRouter API Key 监控面板</h1>
+              <p className="text-slate-400 text-sm mt-0.5 font-medium uppercase tracking-wide">实时监控你的 API 密钥状态</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -100,7 +100,7 @@ export default function Home() {
           <div className="mb-6 p-6 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl text-white shadow-lg">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-emerald-100 text-sm font-medium uppercase tracking-wide">今日消耗总金额</p>
+                <p className="text-emerald-100 text-sm font-medium uppercase tracking-wide">今日消耗金额</p>
                 <p className="text-3xl font-bold mt-1">${totalDailyUsage.toFixed(2)}</p>
               </div>
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
