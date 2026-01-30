@@ -65,22 +65,22 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-slate-50 p-8 text-slate-900">
-      <div className="max-w-7xl mx-auto">
-        <header className="flex justify-between items-center mb-10">
+      <div className="max-w-11/12 mx-auto">
+        <header className="flex flex-col md:flex-row md:justify-between md:items-center mb-10 gap-4 md:gap-0">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-sm">
               <Shield className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-slate-800">OpenRouter API Key 监控面板</h1>
-              <p className="text-slate-400 text-sm mt-0.5 font-medium uppercase tracking-wide">实时监控你的 API 密钥状态</p>
+              <h1 className="text-lg sm:text-2xl font-bold tracking-tight text-slate-800">OpenRouter API Key 监控面板</h1>
+              <p className="text-xs sm:text-sm text-slate-400 mt-0.5 font-medium uppercase tracking-wide">实时监控你的 API 密钥状态</p>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-full md:w-auto">
             <button
               onClick={fetchKeys}
               disabled={loading}
-              className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg shadow-sm hover:bg-slate-50 transition-all disabled:opacity-50 font-medium text-sm"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg shadow-sm hover:bg-slate-50 transition-all disabled:opacity-50 font-medium text-sm flex-1 md:flex-none"
             >
               <RefreshCw className={cn("w-3.5 h-3.5", loading && "animate-spin")} />
               刷新
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 justify-items-center">
           {loading && keys.length === 0 ? (
             Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="h-64 bg-gradient-to-b from-slate-50 to-white rounded-2xl border border-slate-200 animate-pulse shadow-sm" />
